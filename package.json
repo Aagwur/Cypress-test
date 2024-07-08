@@ -1,0 +1,15 @@
+{
+  "name": "test-project-cypress",
+  "version": "1.0.0",
+  "description": "cypress test project",
+  "main": "index.js",
+  "scripts": {
+    "cypress": "npx cypress run --headed",
+    "cypress-debug": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.13.0"
+  }
+}
