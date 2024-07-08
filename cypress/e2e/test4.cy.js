@@ -16,6 +16,7 @@ describe("Test 4", () => {
       productsCountCalculated = 0
 
     // count products on main page
+    cy.wait(2000)
     mainPage.clickNextUntilNotVisible()
     mainPage.productCard
       .title()
@@ -70,7 +71,9 @@ describe("Test 4", () => {
           productsCountCalculated = (productsCountCalculated + 9) * +this.pageNumber
         }
       })
-    // compare product count calculated from categories and count on main page
-    cy.wrap(productsCountMain).should("be.equal", productsCountCalculated)
+      .then(() => {
+        // compare product count calculated from categories and count on main page
+        cy.wrap(productsCountMain).should("be.equal", productsCountCalculated)
+      })
   })
 })
