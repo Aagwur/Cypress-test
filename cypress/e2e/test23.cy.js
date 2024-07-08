@@ -10,10 +10,10 @@ const { userName, password } = users.defaultTestUser
 describe("Test 2-3", () => {
   beforeEach(() => {
     cy.visit("/")
+    general.login({ userName, password })
   })
 
   it("Verify placing order", function () {
-    general.login({ userName, password })
     mainPage.categories.phones().click()
     // select 1st phone from list
     mainPage.productCard.title().first().click()
