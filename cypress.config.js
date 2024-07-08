@@ -8,8 +8,9 @@ module.exports = defineConfig({
     videosFolder: "cypress/reports/videos",
     screenshotsFolder: "cypress/reports/screenshots",
     supportFile: "cypress/support/e2e.js",
+    reporter: 'cypress-mochawesome-reporter',
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on)
     },
   },
 });
