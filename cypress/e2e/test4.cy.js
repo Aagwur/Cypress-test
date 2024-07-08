@@ -4,18 +4,18 @@ const mainPage = require("../pages/mainPage")
 
 const { userName, password } = users.defaultTestUser
 
-describe("Test 2-3", () => {
+describe("Test 4", () => {
   beforeEach(() => {
     cy.visit("/")
     general.login({ userName, password })
   })
 
-  it("Verify logging in and out with valid user", function () {
+  it("Verify products count in each category", function () {
     let pageNumber,
       productsCountMain,
       productsCountCalculated = 0
 
-    // count products in main page
+    // count products on main page
     mainPage.clickNextUntilNotVisible()
     mainPage.productCard
       .title()
