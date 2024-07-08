@@ -1,6 +1,6 @@
 {
-    "defaultTestUser": {
-        "userName": "Anton99",
-        "password": "1234567890"
-    }
+  "defaultTestUser": {
+    "userName": "Anton99",
+    "password": "1234567890"
+  }
 }

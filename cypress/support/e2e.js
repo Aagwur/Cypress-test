@@ -1,5 +1,5 @@
-import './commands'
+import "./commands"
 
 before(() => {
-    cy.viewport(1920, 1080)
+  cy.viewport(1920, 1080)
 })

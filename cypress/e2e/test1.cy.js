@@ -4,7 +4,7 @@ const general = require("../pages/general")
 const { userName, password } = users.defaultTestUser
 
 describe("Test 1", () => {
-  beforeEach(() => {    
+  beforeEach(() => {
     cy.visit("/")
   })
 
@@ -17,7 +17,7 @@ describe("Test 1", () => {
 
       // verify existing user message text
       cy.get("@alertStub").should("be.calledWith", "This user already exist.")
-    })    
+    })
   })
 
   // failing test
@@ -32,7 +32,7 @@ describe("Test 1", () => {
   })
 
   it("Verify logging in with invalid username", () => {
-    general.login({ userName: "invalidName", password, submit: false })  
+    general.login({ userName: "invalidName", password, submit: false })
 
     cy.window().then((win) => {
       cy.stub(win, "alert").as("alertStub")
