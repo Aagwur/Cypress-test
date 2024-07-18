@@ -1,5 +1,3 @@
-require("cypress-wait-until")
-
 Cypress.on("uncaught:exception", (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
@@ -59,4 +57,17 @@ Cypress.Commands.add("selectByPosition", { prevSubject: "element" }, (subject, e
     .find("option")
     .eq(elementIndex)
     .then((option) => cy.wrap(subject).select(option.val()))
+})
+
+Cypress.Commands.overwrite("type", (originalFn, element, text, options) => {
+  if (options && options.sensitive) {
+    options.log = false
+    Cypress.log({
+      $el: element,
+      name: "type",
+      message: "*".repeat(text.length),
+    })
+  }
+
+  return originalFn(element, text, options)
 })
